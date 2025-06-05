@@ -1,18 +1,32 @@
-# RailsGlyphs
+# RailsGlyphs — the essential SVG icon library
 
-TODO: Write welcome message
+**RailsGlyphs is an essential SVG icon library built exclusively for Ruby on Rails projects!**
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/railsglyphs`. To experiment with that code, run `bin/console` for an interactive prompt.
+Supercharge your Rails apps with beautifully crafted, production-ready SVG icons that blend seamlessly into any design. RailsGlyphs makes it effortless to add scalable, customizable icons to your views, helping you ship polished interfaces faster and with less hassle.
+
+Elevate your Rails project’s UI with RailsGlyphs — where design meets developer productivity.
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Add RailsGlyphs to your Rails application's Gemfile:
+
+```ruby
+gem "railsglyphs"
+```
+
+Then install it by running:
+
+```bash
+bundle install
+```
+
+Or, add the gem directly with Bundler:
 
 ```bash
 bundle add railsglyphs
 ```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+If you're not using Bundler, install the gem manually:
 
 ```bash
 gem install railsglyphs
