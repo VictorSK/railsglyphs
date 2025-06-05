@@ -1,3 +1,7 @@
+*.gem
+.bundle
+.DS_Store
+Gemfile.lock
 /.bundle/
 /.yardoc
 /_yardoc/
