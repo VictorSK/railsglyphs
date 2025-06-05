@@ -2,8 +2,8 @@
 require "test_helper"
 require "fileutils"
 
-class TestRailsglyphsIconHelper < Minitest::Test
-  include Railsglyphs::IconHelper
+class TestRailsGlyphsIconHelper < Minitest::Test
+  include RailsGlyphs::IconHelper
 
   SAMPLE_SVG = '<svg xmlns="http://www.w3.org/2000/svg"></svg>'
 
@@ -11,23 +11,23 @@ class TestRailsglyphsIconHelper < Minitest::Test
     @tmp_dir = File.join(Dir.pwd, "tmp_icons")
     FileUtils.mkdir_p(File.join(@tmp_dir, "solid"))
     File.write(File.join(@tmp_dir, "solid", "star.svg"), SAMPLE_SVG)
-    Railsglyphs::IconHelper.icon_base_path = @tmp_dir
-    Railsglyphs::IconHelper::ICON_CACHE.clear
+    RailsGlyphs::IconHelper.icon_base_path = @tmp_dir
+    RailsGlyphs::IconHelper::ICON_CACHE.clear
   end
 
   def teardown
     FileUtils.rm_rf(@tmp_dir)
-    Railsglyphs::IconHelper.icon_base_path = nil
+    RailsGlyphs::IconHelper.icon_base_path = nil
   end
 
   def test_gem_asset_path_returns_path
-    path = Railsglyphs::IconHelper.gem_asset_path
+    path = RailsGlyphs::IconHelper.gem_asset_path
     assert File.directory?(path)
   end
 
   def test_icon_base_path_getter_and_setter
-    Railsglyphs::IconHelper.icon_base_path = "/tmp/foo"
-    assert_equal "/tmp/foo", Railsglyphs::IconHelper.icon_base_path
+    RailsGlyphs::IconHelper.icon_base_path = "/tmp/foo"
+    assert_equal "/tmp/foo", RailsGlyphs::IconHelper.icon_base_path
   end
 
   def test_icon_raises_if_file_missing
@@ -61,7 +61,7 @@ class TestRailsglyphsIconHelper < Minitest::Test
       "<#{tag}>#{content}</#{tag}>"
     end
     icon(:solid, "star")
-    assert Railsglyphs::IconHelper::ICON_CACHE.any?
+    assert RailsGlyphs::IconHelper::ICON_CACHE.any?
     # Call again, should use cache (no error)
     icon(:solid, "star")
   end

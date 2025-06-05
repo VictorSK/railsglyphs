@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Victor S. Keenan"]
   spec.email = ["me@victorkeenan.com"]
 
-  spec.summary = "Simple helper utility for using SVG icons within your Rails project."
-  spec.description = "Simple helper utility for using SVG icons within your Rails project."
+  spec.summary = "RailsGlyphs — the essential Rails SVG icon library"
+  spec.description = "RailsGlyphs is an essential SVG icon library built exclusively for Ruby on Rails projects!"
   spec.homepage = "https://www.victorkeenan.com/projects/railsglyphs/"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"

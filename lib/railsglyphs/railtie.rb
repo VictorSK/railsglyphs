@@ -1,10 +1,10 @@
 require "rails/railtie"
 
-module Railsglyphs
+module RailsGlyphs
   class Railtie < Rails::Railtie
     initializer "railsglyphs.helpers" do
       ActiveSupport.on_load(:action_view) do
-        include Railsglyphs::IconHelper
+        include RailsGlyphs::IconHelper
       end
     end
   end

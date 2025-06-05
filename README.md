@@ -2,7 +2,7 @@
 
 **RailsGlyphs is an essential SVG icon library built exclusively for Ruby on Rails projects!**
 
-Supercharge your Rails apps with beautifully crafted, production-ready SVG icons that blend seamlessly into any design. RailsGlyphs makes it effortless to add scalable, customizable icons to your views, helping you ship polished interfaces faster and with less hassle.
+Supercharge your Rails apps with beautifully crafted, production ready SVG icons that blend seamlessly into any design. RailsGlyphs makes it effortless to add scalable, customizable icons served as raw SVG files and fully cached when rendered to your views, helping you ship polished interfaces faster and with less hassle.
 
 Elevate your Rails project’s UI with RailsGlyphs — where design meets developer productivity.
 
@@ -44,6 +44,7 @@ icon(style, icon_name, text = nil, size: 24, **html_options)
 
 - `style` — Choose either `"solid"` or `"outline"` to match your design.
 - `icon_name` — The SVG icon name (e.g., `"x"`, `"check"`, `"user"`).
+  See the [full icon list and names](Icons.md).
 - `text` (optional) — Text to display after the icon.
 - `size` (optional) — Icon size in pixels (default: `24`).
 - `html_options` (optional) — Additional HTML attributes for the `<i>` tag wrapper (e.g., `title`, `class`, etc.).
@@ -63,11 +64,35 @@ icon('solid', 'x', 'Close', size: 40, title: 'Close this window', class: 'text-r
 
 This will render a scalable SVG icon, optionally followed by text, with your custom size and HTML attributes applied.
 
-## Development
+## Adding or Customizing Icons
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+RailsGlyphs stores SVG icons in the `assets/icons` directory, organized by style (`solid` or `outline`). To add your own icons or customize the set:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+1. **Add a New Icon:**
+
+   - Place your SVG file in the appropriate style folder, e.g.:
+     - `assets/icons/solid/my_icon.svg`
+     - `assets/icons/outline/my_icon.svg`
+   - Name your SVG file using lowercase letters and underscores (e.g., `user_add.svg`).
+
+2. **Override Icons in Your App:**
+
+   - By default, RailsGlyphs uses the gem’s built-in icons.
+   - To use your own icons, set a custom icon base path in an initializer:
+
+     ```ruby
+     RailsGlyphs::IconHelper.icon_base_path = Rails.root.join("app/assets/icons")
+     ```
+
+   - Place your custom SVGs in the same folder structure as above.
+
+3. **Icon Naming:**
+
+   - The `icon` helper uses the filename (without `.svg`) as the icon name.
+   - For example, `icon('solid', 'user_add')` will look for `solid/user_add.svg`.
+
+4. **Reloading:**
+   - If you add or change icons while your Rails server is running, you may need to restart the server to clear the icon cache.
 
 ## Contributing
 
