@@ -34,7 +34,34 @@ gem install railsglyphs
 
 ## Usage
 
-TODO: Write usage instructions
+To use RailsGlyphs in your Rails views, call the `icon` helper:
+
+```ruby
+icon(style, icon_name, text = nil, size: 24, **html_options)
+```
+
+**Parameters:**
+
+- `style` — Choose either `"solid"` or `"outline"` to match your design.
+- `icon_name` — The SVG icon name (e.g., `"x"`, `"check"`, `"user"`).
+- `text` (optional) — Text to display after the icon.
+- `size` (optional) — Icon size in pixels (default: `24`).
+- `html_options` (optional) — Additional HTML attributes for the `<i>` tag wrapper (e.g., `title`, `class`, etc.).
+
+**Examples:**
+
+```ruby
+# Basic usage
+icon('solid', 'check')
+
+# With text
+icon('outline', 'user', 'Profile')
+
+# Custom size and HTML attributes
+icon('solid', 'x', 'Close', size: 40, title: 'Close this window', class: 'text-red-500')
+```
+
+This will render a scalable SVG icon, optionally followed by text, with your custom size and HTML attributes applied.
 
 ## Development
 
