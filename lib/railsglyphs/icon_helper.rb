@@ -43,7 +43,7 @@ module RailsGlyphs
       html_options['aria-hidden'] ||= true
 
       html = content_tag(:i, svg_content, html_options)
-      html << '&nbsp;'.html_safe << text.to_s unless text.blank?
+      html << ' '.html_safe << text.to_s unless text.blank?
       html
     end
   end
