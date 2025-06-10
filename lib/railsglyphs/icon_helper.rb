@@ -28,6 +28,8 @@ module RailsGlyphs
       width  = html_options[:size] || 24
       html_options.delete(:size)
 
+      text = content_tag(:span, text, class: "icon-text") unless text.blank?
+
       svg_path = File.join(RailsGlyphs::IconHelper.icon_base_path, style.to_s, "#{name}.svg")
       raise ArgumentError, "Icon '#{name}' with style '#{style}' not found at #{svg_path}." unless File.exist?(svg_path)
 
