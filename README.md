@@ -1,4 +1,4 @@
-# RailsGlyphs — the essential SVG icon library
+# RailsGlyphs — The essential SVG icon library
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Ruby](https://img.shields.io/badge/ruby-%3E%3D3.1-red)
