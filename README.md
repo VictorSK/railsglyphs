@@ -1,5 +1,10 @@
 # RailsGlyphs — the essential SVG icon library
 
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Ruby](https://img.shields.io/badge/ruby-%3E%3D3.1-red)
+[![Issues](https://img.shields.io/github/issues/VictorSK/railsglyphs)](https://github.com/VictorSK/railsglyphs/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/VictorSK/railsglyphs)](https://github.com/VictorSK/railsglyphs/commits/main)
+
 **RailsGlyphs is an essential SVG icon library built exclusively for Ruby on Rails projects!**
 
 Supercharge your Rails apps with beautifully crafted, production ready SVG icons that blend seamlessly into any design. RailsGlyphs makes it effortless to add scalable, customizable icons served as raw SVG files and fully cached when rendered to your views, helping you ship polished interfaces faster and with less hassle.
