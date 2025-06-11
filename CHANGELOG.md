@@ -1,3 +1,14 @@
+## [1.0.3] - 2025-06-05
+
+### Added
+
+- HTML span wrapper around outputted text for styling and font adjustments
+- Additional icons
+
+### Fixed
+
+- Icon spacing with text
+
 ## [1.0.2] - 2025-06-05
 
 ### Fixed

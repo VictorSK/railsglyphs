@@ -3,7 +3,7 @@
 Below is a list of all SVG icons included in RailsGlyphs.
 Use the icon name (filename without `.svg`) with the `icon` helper.
 
-**Solid icons:** 332 &nbsp;&nbsp; **Outline icons:** 332
+**Solid icons:** 334 &nbsp;&nbsp; **Outline icons:** 334
 
 | Icon Name | Solid Example | Outline Example |
 | --------- | ------------- | --------------- |
@@ -246,6 +246,7 @@ Use the icon name (filename without `.svg`) with the `icon` helper.
 | minus-circle | ![solid](assets/icons/solid/minus-circle.svg) | ![outline](assets/icons/outline/minus-circle.svg) |
 | minus-small | ![solid](assets/icons/solid/minus-small.svg) | ![outline](assets/icons/outline/minus-small.svg) |
 | moon | ![solid](assets/icons/solid/moon.svg) | ![outline](assets/icons/outline/moon.svg) |
+| moon-alt | ![solid](assets/icons/solid/moon-alt.svg) | ![outline](assets/icons/outline/moon-alt.svg) |
 | musical-note | ![solid](assets/icons/solid/musical-note.svg) | ![outline](assets/icons/outline/musical-note.svg) |
 | newspaper | ![solid](assets/icons/solid/newspaper.svg) | ![outline](assets/icons/outline/newspaper.svg) |
 | no-symbol | ![solid](assets/icons/solid/no-symbol.svg) | ![outline](assets/icons/outline/no-symbol.svg) |
@@ -284,6 +285,7 @@ Use the icon name (filename without `.svg`) with the `icon` helper.
 | rectangle-stack | ![solid](assets/icons/solid/rectangle-stack.svg) | ![outline](assets/icons/outline/rectangle-stack.svg) |
 | rocket-launch | ![solid](assets/icons/solid/rocket-launch.svg) | ![outline](assets/icons/outline/rocket-launch.svg) |
 | rss | ![solid](assets/icons/solid/rss.svg) | ![outline](assets/icons/outline/rss.svg) |
+| rubygems | ![solid](assets/icons/solid/rubygems.svg) | ![outline](assets/icons/outline/rubygems.svg) |
 | scale | ![solid](assets/icons/solid/scale.svg) | ![outline](assets/icons/outline/scale.svg) |
 | scissors | ![solid](assets/icons/solid/scissors.svg) | ![outline](assets/icons/outline/scissors.svg) |
 | server | ![solid](assets/icons/solid/server.svg) | ![outline](assets/icons/outline/server.svg) |
