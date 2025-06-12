@@ -51,6 +51,7 @@ icon(style, icon_name, text = nil, size: 24, **html_options)
 - `icon_name` — The SVG icon name (e.g., `"x"`, `"check"`, `"user"`).
   See the [full icon list and names](Icons.md).
 - `text` (optional) — Text to display after the icon.
+  **Note:** If provided, the text will be automatically wrapped in a `<span class="icon-text">...</span>` for easy styling.
 - `size` (optional) — Icon size in pixels (default: `24`).
 - `html_options` (optional) — Additional HTML attributes for the `<i>` tag wrapper (e.g., `title`, `class`, etc.).
 
@@ -60,14 +61,14 @@ icon(style, icon_name, text = nil, size: 24, **html_options)
 # Basic usage
 icon('solid', 'check')
 
-# With text
+# With text (text will be wrapped in <span class="icon-text">)
 icon('outline', 'user', 'Profile')
 
 # Custom size and HTML attributes
 icon('solid', 'x', 'Close', size: 40, title: 'Close this window', class: 'text-red-500')
 ```
 
-This will render a scalable SVG icon, optionally followed by text, with your custom size and HTML attributes applied.
+This will render a scalable SVG icon, optionally followed by text (wrapped in a span for styling), with your custom size and HTML attributes applied.
 
 ## Adding or Customizing Icons
 

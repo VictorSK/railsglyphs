@@ -1,4 +1,5 @@
-# test/test_railsglyphs_test.rb
+# frozen_string_literal: true
+
 require "test_helper"
 require "fileutils"
 
@@ -64,6 +65,67 @@ class TestRailsGlyphsIconHelper < Minitest::Test
     assert RailsGlyphs::IconHelper::ICON_CACHE.any?
     # Call again, should use cache (no error)
     icon(:solid, "star")
+  end
+
+  def test_icon_treats_third_arg_as_html_options_if_hash
+    def self.content_tag(tag, content, options)
+      "<#{tag} class='#{options[:class]}' aria-hidden='#{options['aria-hidden']}'>#{content}</#{tag}>"
+    end
+    html = icon(:solid, "star", { class: "foo", title: "bar" })
+    assert_includes html, "class='foo'"
+    assert_includes html, "title='bar'" if html.include?("title=")
+  end
+
+  def test_icon_does_not_overwrite_existing_aria_hidden
+    def self.content_tag(tag, content, options)
+      "<#{tag} class='#{options[:class]}' aria-hidden='#{options['aria-hidden']}'>#{content}</#{tag}>"
+    end
+    html = icon(:solid, "star", nil, "aria-hidden" => false, class: "icon")
+    assert_includes html, "aria-hidden='false'"
+  end
+
+  def test_icon_wraps_text_in_span
+    def self.content_tag(tag, content, options)
+      if tag == :span
+        "<span class='#{options[:class]}'>#{content}</span>"
+      else
+        "<#{tag} class='#{options[:class]}' aria-hidden='#{options['aria-hidden']}'>#{content}</#{tag}>"
+      end
+    end
+    html = icon(:solid, "star", "Wrapped")
+    assert_includes html, "<span class='icon-text'>Wrapped</span>"
+  end
+
+  def test_icon_cache_key_changes_with_text_and_size
+    def self.content_tag(tag, content, options)
+      "<#{tag}>#{content}</#{tag}>"
+    end
+    icon(:solid, "star", "A", size: 24)
+    key1 = RailsGlyphs::IconHelper::ICON_CACHE.keys.first
+    RailsGlyphs::IconHelper::ICON_CACHE.clear
+    icon(:solid, "star", "B", size: 24)
+    key2 = RailsGlyphs::IconHelper::ICON_CACHE.keys.first
+    assert key1 != key2
+    RailsGlyphs::IconHelper::ICON_CACHE.clear
+    icon(:solid, "star", "A", size: 32)
+    key3 = RailsGlyphs::IconHelper::ICON_CACHE.keys.first
+    assert key1 != key3
+  end
+
+  def test_icon_accepts_string_and_symbol_style
+    def self.content_tag(tag, content, options)
+      "<#{tag}>#{content}</#{tag}>"
+    end
+    assert icon(:solid, "star")
+    assert icon("solid", "star")
+  end
+
+  def test_icon_with_blank_text
+    def self.content_tag(tag, content, options)
+      "<#{tag}>#{content}</#{tag}>"
+    end
+    html = icon(:solid, "star", "")
+    refute_includes html, "<span"
   end
 end
 

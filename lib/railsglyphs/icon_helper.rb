@@ -42,7 +42,7 @@ module RailsGlyphs
       end
 
       html_options[:class] = html_options[:class].strip if html_options[:class]
-      html_options['aria-hidden'] ||= true
+      html_options['aria-hidden'] = true unless html_options.key?('aria-hidden')
 
       html = content_tag(:i, svg_content, html_options)
       html << ' '.html_safe << text.to_s unless text.blank?

@@ -1,13 +1,13 @@
-## [1.0.3] - 2025-06-11
+# CHANGELOG
 
-### Added
+The noteworthy updates for each RailsGlyphs version are included here. For a complete changelog, see the git history.
 
-- HTML span wrapper around outputted text for styling and font adjustments
-- Additional icons
+## [1.0.4] - 2025-06-12
 
-### Fixed
+### Changes
 
-- Icon spacing with text
+- Refactor tests for complete code coverage
+- General maintenance and tidy up a little
 
 ## [1.0.2] - 2025-06-05
 
