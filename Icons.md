@@ -3,7 +3,7 @@
 Below is a list of all SVG icons included in RailsGlyphs.
 Use the icon name (filename without `.svg`) with the `icon` helper.
 
-**Solid icons:** 334 &nbsp;&nbsp; **Outline icons:** 334
+**Solid icons:** 335 &nbsp;&nbsp; **Outline icons:** 335
 
 | Icon Name | Solid Example | Outline Example |
 | --------- | ------------- | --------------- |
@@ -157,6 +157,7 @@ Use the icon name (filename without `.svg`) with the `icon` helper.
 | cursor-arrow-ripple | ![solid](assets/icons/solid/cursor-arrow-ripple.svg) | ![outline](assets/icons/outline/cursor-arrow-ripple.svg) |
 | device-phone-mobile | ![solid](assets/icons/solid/device-phone-mobile.svg) | ![outline](assets/icons/outline/device-phone-mobile.svg) |
 | device-tablet | ![solid](assets/icons/solid/device-tablet.svg) | ![outline](assets/icons/outline/device-tablet.svg) |
+| discord | ![solid](assets/icons/solid/discord.svg) | ![outline](assets/icons/outline/discord.svg) |
 | divide | ![solid](assets/icons/solid/divide.svg) | ![outline](assets/icons/outline/divide.svg) |
 | document | ![solid](assets/icons/solid/document.svg) | ![outline](assets/icons/outline/document.svg) |
 | document-arrow-down | ![solid](assets/icons/solid/document-arrow-down.svg) | ![outline](assets/icons/outline/document-arrow-down.svg) |
