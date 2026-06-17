@@ -42,7 +42,7 @@ gem install railsglyphs
 To use RailsGlyphs in your Rails views, call the `icon` helper:
 
 ```ruby
-icon(style, icon_name, text = nil, size: 24, **html_options)
+icon(style, icon_name, text = nil, html_options = {})
 ```
 
 **Parameters:**
@@ -52,8 +52,9 @@ icon(style, icon_name, text = nil, size: 24, **html_options)
   See the [full icon list and names](Icons.md).
 - `text` (optional) — Text to display after the icon.
   **Note:** If provided, the text will be automatically wrapped in a `<span class="icon-text">...</span>` for easy styling.
-- `size` (optional) — Icon size in pixels (default: `24`).
-- `html_options` (optional) — Additional HTML attributes for the `<i>` tag wrapper (e.g., `title`, `class`, etc.).
+- `html_options` (optional) — A hash of options for the `<i>` tag wrapper:
+  - `size` — Icon size in pixels (default: `24`).
+  - Any other key is passed through as an HTML attribute (e.g., `title`, `class`, etc.).
 
 **Examples:**
 
@@ -75,14 +76,12 @@ This will render a scalable SVG icon, optionally followed by text (wrapped in a 
 RailsGlyphs stores SVG icons in the `assets/icons` directory, organized by style (`solid` or `outline`). To add your own icons or customize the set:
 
 1. **Add a New Icon:**
-
    - Place your SVG file in the appropriate style folder, e.g.:
      - `assets/icons/solid/my_icon.svg`
      - `assets/icons/outline/my_icon.svg`
    - Name your SVG file using lowercase letters and underscores (e.g., `user_add.svg`).
 
 2. **Override Icons in Your App:**
-
    - By default, RailsGlyphs uses the gem’s built-in icons.
    - To use your own icons, set a custom icon base path in an initializer:
 
@@ -93,7 +92,6 @@ RailsGlyphs stores SVG icons in the `assets/icons` directory, organized by style
    - Place your custom SVGs in the same folder structure as above.
 
 3. **Icon Naming:**
-
    - The `icon` helper uses the filename (without `.svg`) as the icon name.
    - For example, `icon('solid', 'user_add')` will look for `solid/user_add.svg`.
 
@@ -102,16 +100,16 @@ RailsGlyphs stores SVG icons in the `assets/icons` directory, organized by style
 
 ## Contributing
 
-Bug reports, pull requests, and enhancements are welcome on [GitHub](https://github.com/VictorSK/railsglyphs). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct. It's code, lets have fun!
+Bug reports, pull requests, and enhancements are welcome on [GitHub](https://github.com/VictorSK/railsglyphs). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct. It's code, let's have fun!
 
 ## Code of Conduct
 
-Everyone interacting in the railsglyphs project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/VictorSK/railsglyphs/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the RailsGlyphs project's codebases, issue trackers, chat rooms, and mailing lists is expected to follow the [code of conduct](https://github.com/VictorSK/railsglyphs/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
-Copyright © 2025 Victor S. Keenan. The gem is available as open source under the terms of the [LICENSE](LICENSE) file.
+Copyright © 2025 Victor S. Keenan. The gem is available as open source under the terms of the [LICENSE](LICENSE.txt) file.
 
 ## Coded With Love
 
-Coded crafted by me, [Victor S. Keenan](https://www.victorkeenan.com). Find me on Twitter [@VictorSK](https://twitter.com/victorsk) or [hire me](https://www.inspyre.com) to design, develop, and grow your product or service.
+Code crafted by me, [Victor S. Keenan](https://www.victorkeenan.com). Find me on Twitter [@VictorSK](https://twitter.com/victorsk) or [hire me](https://www.inspyre.com) to design, develop, and grow your product or service.
